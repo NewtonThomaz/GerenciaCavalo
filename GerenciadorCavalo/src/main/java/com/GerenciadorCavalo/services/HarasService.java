@@ -32,16 +32,18 @@ public class HarasService {
 		if (existeHaras.isPresent()) {
 			putHaras.setId(id);
 			return harasRepository.save(putHaras);
+		} else {
+			return null;		
 		}
-		return null;
 	}
-	
+
 	public boolean deleteHaras(Long id) {
 		Optional <Haras> existeHaras = harasRepository.findById(id);
 		if (existeHaras.isPresent()) {
 			harasRepository.deleteById(id);
 			return true;
+		} else {		
+			return false;
 		}
-		return false;
 	}
 }

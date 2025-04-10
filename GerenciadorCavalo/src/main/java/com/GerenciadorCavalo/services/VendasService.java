@@ -33,8 +33,9 @@ public class VendasService {
 		if (existeVendas.isPresent()) {
 			vendasRepository.deleteById(id);
 			return true;
+		} else {
+			return false;		
 		}
-		return false;
 	}
 
 	public Vendas updateVendas(Long id, Vendas putVendas) {
@@ -42,7 +43,8 @@ public class VendasService {
 		if (existeVendas.isPresent()) {
 			putVendas.setId(id);
 			return vendasRepository.save(putVendas);
+		} else {
+			return null;		
 		}
-		return null;
 	}
 }

@@ -33,8 +33,9 @@ public class ApostaCavalosService {
 		if (existeapostaCavalos.isPresent()) {
 			apostaCavalosRepository.deleteById(id);
 			return true;
+		} else {			
+			return false;
 		}
-		return false;
 	}
 
 	public ApostaCavalos updateApostaCavalos(Long id, ApostaCavalos putApostaCavalos) {
@@ -42,8 +43,9 @@ public class ApostaCavalosService {
 		if (existeapostaCavalos.isPresent()) {
 			putApostaCavalos.setId(id);
 			return apostaCavalosRepository.save(putApostaCavalos);
+		} else {			
+			return null;
 		}
-		return null;
 	}
 
 }
