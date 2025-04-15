@@ -54,7 +54,6 @@ public class ApostaCavalosController {
 		} else {
 			return ResponseEntity.notFound().build();
 		}
-
 	}
 	
 	@DeleteMapping("/{id}")
